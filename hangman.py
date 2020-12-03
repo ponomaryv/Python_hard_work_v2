@@ -5,6 +5,8 @@
 
 # Hangman Game
 # -----------------------------------
+
+
 import random
 import string
 
@@ -42,6 +44,8 @@ def choose_word(wordlist):
 
 # -----------------------------------
 
+
+
 wordlist = load_words()
 
 
@@ -54,6 +58,7 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
+
     pass
 
 
@@ -65,6 +70,7 @@ def get_guessed_word(secret_word, letters_guessed):
     returns: string, comprised of letters, underscores (_), and spaces that represents
       which letters in secret_word have been guessed so far.
     '''
+
     pass
 
 
@@ -75,6 +81,7 @@ def get_available_letters(letters_guessed):
     returns: string (of letters), comprised of letters that represents which letters have not
       yet been guessed.
     '''
+
     pass
     
     
@@ -104,16 +111,19 @@ def hangman(secret_word):
     
     Follows the other limitations detailed in the problem write-up.
     '''
+
     pass
 
 
 # -----------------------------------
 
 
+
 def match_with_gaps(my_word, other_word):
     '''
     my_word: string with _ characters, current guess of secret word
     other_word: string, regular English word
+
     returns: boolean, True if all the actual letters of my_word match the
         corresponding letters of other_word, or the letter is the special symbol
         _ , and my_word and other_word are of the same length;
@@ -135,6 +145,8 @@ def match_with_gaps(my_word, other_word):
         return False
 
 
+
+
 def show_possible_matches(my_word):
     '''
     my_word: string with _ characters, current guess of secret word
@@ -145,12 +157,14 @@ def show_possible_matches(my_word):
              that has already been revealed.
 
     '''
+
     matches = [word for word in wordlist if match_with_gaps(my_word, word) == True]
     if not matches:
         print("No matches found.\n")
     else:
         print("Possible word matches are: " + ", ".join(matches), end="." + "\n")
     return
+
 
 
 def hangman_with_hints(secret_word):
@@ -184,9 +198,11 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
+
     secret_word = choose_word(wordlist)
     hangman(secret_word)
 
 ###############
+
     #secret_word = choose_word(wordlist)
     #hangman_with_hints(secret_word)
